@@ -54,14 +54,38 @@
 		074F37972287193B00B19E29 /* Smack Chat */ = {
 			isa = PBXGroup;
 			children = (
+				074F37AC2287199900B19E29 /* Model */,
+				074F37AB2287198A00B19E29 /* View */,
+				074F37AA2287197B00B19E29 /* Controller */,
 				074F37982287193B00B19E29 /* AppDelegate.swift */,
-				074F379A2287193B00B19E29 /* ViewController.swift */,
 				074F379C2287193B00B19E29 /* Main.storyboard */,
 				074F379F2287193C00B19E29 /* Assets.xcassets */,
 				074F37A12287193C00B19E29 /* LaunchScreen.storyboard */,
 				074F37A42287193C00B19E29 /* Info.plist */,
 			);
 			path = "Smack Chat";
+			sourceTree = "<group>";
+		};
+		074F37AA2287197B00B19E29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				074F379A2287193B00B19E29 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		074F37AB2287198A00B19E29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		074F37AC2287199900B19E29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
