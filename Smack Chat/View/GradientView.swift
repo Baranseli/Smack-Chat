@@ -24,8 +24,6 @@ class GradientView: UIView {
         }
     }
     
-    
-    
     override func layoutSubviews() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [topColour.cgColor, bottomColour.cgColor]

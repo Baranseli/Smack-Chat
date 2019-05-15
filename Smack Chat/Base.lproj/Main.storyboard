@@ -143,6 +143,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-p4-FGm">
+                                <rect key="frame" x="8" y="717" width="36" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -153,11 +159,13 @@
                             <constraint firstItem="9Om-6O-Cda" firstAttribute="trailing" secondItem="NZ4-oX-tbb" secondAttribute="trailing" id="7ed-EF-A4y"/>
                             <constraint firstItem="OBw-tI-XAi" firstAttribute="leading" secondItem="NZ4-oX-tbb" secondAttribute="leading" id="F07-zM-Qlg"/>
                             <constraint firstItem="OBw-tI-XAi" firstAttribute="bottom" secondItem="NZ4-oX-tbb" secondAttribute="bottom" id="ME8-E7-NMR"/>
+                            <constraint firstItem="OBw-tI-XAi" firstAttribute="top" secondItem="XA1-p4-FGm" secondAttribute="bottom" constant="4" id="Oo5-Co-i2y"/>
                             <constraint firstItem="O6p-hL-0Fd" firstAttribute="centerY" secondItem="OBw-tI-XAi" secondAttribute="centerY" id="PMe-jZ-yv8"/>
                             <constraint firstItem="NZ4-oX-tbb" firstAttribute="trailing" secondItem="OBw-tI-XAi" secondAttribute="trailing" id="R44-dQ-q4f"/>
                             <constraint firstItem="OBw-tI-XAi" firstAttribute="top" secondItem="C56-5i-Cik" secondAttribute="bottom" constant="30" id="RCr-s6-6rC"/>
                             <constraint firstItem="C56-5i-Cik" firstAttribute="top" secondItem="9Om-6O-Cda" secondAttribute="bottom" id="VqZ-qk-E9Q"/>
                             <constraint firstItem="9Om-6O-Cda" firstAttribute="leading" secondItem="NZ4-oX-tbb" secondAttribute="leading" id="msk-b0-jCI"/>
+                            <constraint firstItem="XA1-p4-FGm" firstAttribute="leading" secondItem="NZ4-oX-tbb" secondAttribute="leading" constant="8" id="nF0-rz-8JP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NZ4-oX-tbb"/>
                     </view>
@@ -168,6 +176,7 @@
                         <outlet property="messageTxtFld" destination="OBw-tI-XAi" id="tZW-8j-j7h"/>
                         <outlet property="sendBtn" destination="O6p-hL-0Fd" id="MGc-7Y-Ir8"/>
                         <outlet property="tableView" destination="C56-5i-Cik" id="Olw-dz-UdT"/>
+                        <outlet property="typingUsersLbl" destination="XA1-p4-FGm" id="LQ4-D3-dD3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LK-jk-hZm" userLabel="First Responder" sceneMemberID="firstResponder"/>

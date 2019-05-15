@@ -16,6 +16,7 @@ class MessageService {
     
     var channels = [Channel]()
     var messages = [Message]()
+    var unreadChannels = [String]()
     var selectedChannel : Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler) {
@@ -35,9 +36,6 @@ class MessageService {
                     NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                     completion(true)
                 }
-                
-                
-                
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
@@ -71,9 +69,6 @@ class MessageService {
                 completion(false)
             }
         }
-        
-        
-        
     }
     
     func clearMessages () {

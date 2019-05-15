@@ -16,8 +16,6 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var bgView: UIView!
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +50,6 @@ class ProfileVC: UIViewController {
     @objc func closeTap(_recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
+
     
 }

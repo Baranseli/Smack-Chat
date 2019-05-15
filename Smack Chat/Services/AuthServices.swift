@@ -94,7 +94,6 @@ class AuthService {
             }
         }
         
-        
     }
     
     
@@ -110,8 +109,7 @@ class AuthService {
             "avatarColour" : avatarColour
         ]
         
-       
-        
+    
         Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else { return }
@@ -125,8 +123,6 @@ class AuthService {
         }
         
     }
-    
-    
     
     func findUserByEmail(completion: @escaping CompletionHandler) {
         
@@ -142,9 +138,6 @@ class AuthService {
             }
          }
     }
-    
-    
-    
     
     func setUserInfo(data: Data) {
         let json = JSON(data: data)

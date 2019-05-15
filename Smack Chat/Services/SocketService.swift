@@ -38,8 +38,6 @@ class SocketService: NSObject {
     // then go to AppDelegate, func applicationDidBecomeActive for socket.connect(), and func applicationWillTerminate for socket.disconnect
     
 
-    
-    
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
         
         socket.emit("newChannel", channelName, channelDescription)
@@ -68,7 +66,7 @@ class SocketService: NSObject {
     }
     
     
-    func getChatMessages(completion: @escaping CompletionHandler) {
+    func getChatMessages(completion: @escaping (_ newMessage: Message) -> Void) {
         socket.on("messaceCreated") { (dataArray, ack) in
             guard let msgBody = dataArray[0] as? String else { return }
             guard let channelId = dataArray[2] as? String else { return }
@@ -78,17 +76,21 @@ class SocketService: NSObject {
              guard let id = dataArray[6] as? String else { return }
              guard let timeStamp = dataArray[7] as? String else { return }
             
-            if channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
-                let newMessage = Message(message: msgBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColour: userAvatarColour, id: id, timeStamp: timeStamp)
-                MessageService.instance.messages.append(newMessage)
-                completion(true)
-            } else {
-                completion(false)
-            }
+            let newMessage = Message(message: msgBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColour: userAvatarColour, id: id, timeStamp: timeStamp)
+
+            completion(newMessage)
+          
         }
     }
     
     
+    func getTypingUsers(_completionHandler: @escaping (_ typingUsers: [String: String]) -> Void)  {
+        
+        socket.once("userTypingUpdate") { (dataArray, ark) in
+            guard let typingUsers = dataArray[0] as? [String: String] else { return }
+            _completionHandler(typingUsers)
+        }
+    }
     
     
 }

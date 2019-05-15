@@ -23,8 +23,7 @@ class AvatarCell: UICollectionViewCell {
         setupView()
     }
     
-    
-    
+
     func configureCell(index: Int, type: AvatarType) {
         if type == AvatarType.dark{
             avatarImg.image = UIImage(named: "dark \(index)")

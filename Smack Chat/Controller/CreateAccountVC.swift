@@ -20,20 +20,12 @@ class CreateAccountVC: UIViewController {
     var avatarColour = "[0.5, 0.5, 0.5, 1]"
     var bgColour : UIColor?
     
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
  
         setupView()
-        
-        
-        
-        
     }
-  
-    
     
     override func viewDidAppear(_ animated: Bool) {
         if UserDataService.instance.avatarName != "" {
@@ -89,8 +81,6 @@ class CreateAccountVC: UIViewController {
         }
         
     }
-    
-    
     
     
     @IBAction func closeBtnClicked(_ sender: Any) {

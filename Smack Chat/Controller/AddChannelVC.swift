@@ -15,9 +15,6 @@ class AddChannelVC: UIViewController {
     @IBOutlet weak var bgView: UIView!
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()

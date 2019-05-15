@@ -15,11 +15,6 @@ class MessageCell: UITableViewCell {
     @IBOutlet weak var messageBodyLbl: UILabel!
     
     
-    
-    
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
        
@@ -31,7 +26,20 @@ class MessageCell: UITableViewCell {
         userimg.image = UIImage(named: message.userAvatar)
         userimg.backgroundColor = UserDataService.instance.returnUIColour(components: message.userAvatarColour)
         
+        guard var isoDate = message.timeStamp else { return }
+        var end = isoDate.index(isoDate.endIndex, offSetBy: -5)
+        isoDate = isoDate.substring(to: end)
+        
+        let isoFormatter = ISO8601DateFormatter()
+        let chatDate = isoFormatter.date(from: isoDate.appending("Z"))
+        
+        let newFormatter = DateFormatter()
+        newFormatter.dateFormat = "MMM d, h:mm a"
+        
+        if let finalDate = chatDate {
+            let finalDate = newFormatter.string(from: finalDate)
+            timeStamp.text = finalDate
+        }
     }
     
-
 }
