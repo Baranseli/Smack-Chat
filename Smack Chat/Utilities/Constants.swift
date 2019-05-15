@@ -17,7 +17,7 @@ let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
 let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail"
 let URL_GET_CHANNELS = "\(BASE_URL)channel"
-
+let URL_GET_MESSAGES = "\(BASE_URL)message/byChannel"
 
 
 // Colours
@@ -25,6 +25,8 @@ let smackPurplePlaceHolder = #colorLiteral(red: 0.3266413212, green: 0.421520113
 
 // Notification Constants
 let NOTIF_USER_DATA_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
 
 // segues
 let TO_LOGIN = "toLogin"

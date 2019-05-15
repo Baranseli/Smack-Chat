@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0713AEEF228B593B0087137A /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713AEEE228B593B0087137A /* SocketService.swift */; };
+		0713AEF1228B71300087137A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713AEF0228B71300087137A /* Message.swift */; };
+		0713AEF3228B7CA10087137A /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713AEF2228B7CA10087137A /* KeyboardBoundView.swift */; };
+		0713AEF5228B81C10087137A /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0713AEF4228B81C10087137A /* MessageCell.swift */; };
 		074F37992287193B00B19E29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074F37982287193B00B19E29 /* AppDelegate.swift */; };
 		074F379E2287193B00B19E29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074F379C2287193B00B19E29 /* Main.storyboard */; };
 		074F37A02287193C00B19E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 074F379F2287193C00B19E29 /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0713AEEE228B593B0087137A /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		0713AEF0228B71300087137A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0713AEF2228B7CA10087137A /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		0713AEF4228B81C10087137A /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		074F37952287193B00B19E29 /* Smack Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smack Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		074F37982287193B00B19E29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		074F379D2287193B00B19E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,6 +156,8 @@
 				075558572287A9DA006FD43E /* AvatarCell.swift */,
 				075382212288ACD900447770 /* CircleImage.swift */,
 				079BA270228A22E80065C556 /* ChannelCell.swift */,
+				0713AEF2228B7CA10087137A /* KeyboardBoundView.swift */,
+				0713AEF4228B81C10087137A /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0753822A2288DD7800447770 /* Channel.swift */,
+				0713AEF0228B71300087137A /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 				0755584F228784D2006FD43E /* AuthServices.swift */,
 				0755585322879BD9006FD43E /* UserDataService.swift */,
 				075382282288DD0E00447770 /* MessageService.swift */,
+				0713AEEE228B593B0087137A /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -326,11 +338,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0713AEF3228B7CA10087137A /* KeyboardBoundView.swift in Sources */,
+				0713AEEF228B593B0087137A /* SocketService.swift in Sources */,
 				075382252288C13800447770 /* ProfileVC.swift in Sources */,
 				079BA271228A22E80065C556 /* ChannelCell.swift in Sources */,
 				075558442287430F006FD43E /* ChannelVC.swift in Sources */,
 				075558562287A77F006FD43E /* AvatarPickerVC.swift in Sources */,
+				0713AEF5228B81C10087137A /* MessageCell.swift in Sources */,
 				0755585222878EF5006FD43E /* RoundedButton.swift in Sources */,
+				0713AEF1228B71300087137A /* Message.swift in Sources */,
 				0753822B2288DD7800447770 /* Channel.swift in Sources */,
 				075382222288ACD900447770 /* CircleImage.swift in Sources */,
 				075382292288DD0E00447770 /* MessageService.swift in Sources */,

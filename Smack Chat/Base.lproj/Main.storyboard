@@ -14,7 +14,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SWRevealViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SWRevealView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,17 +64,110 @@
                                     <constraint firstAttribute="bottom" secondItem="Y3B-jO-fKP" secondAttribute="bottom" constant="12" id="qTX-7c-PmD"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-tI-XAi">
+                                <rect key="frame" x="0.0" y="738" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pLM-9p-2NC"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageTxtFldEditing:" destination="IiH-be-i3L" eventType="editingChanged" id="cQe-VT-g3S"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6p-hL-0Fd">
+                                <rect key="frame" x="337" y="743" width="30" height="30"/>
+                                <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="messageSendBtnClicked:" destination="IiH-be-i3L" eventType="touchUpInside" id="wX5-oP-tei"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C56-5i-Cik">
+                                <rect key="frame" x="0.0" y="77" width="375" height="631"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="106" id="w6M-TU-vJF" customClass="MessageCell" customModule="Smack_Chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="106"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w6M-TU-vJF" id="zBe-LX-1JW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fu5-k6-g2A" customClass="CircleImage" customModule="Smack_Chat" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Vqf-Ew-fv6"/>
+                                                        <constraint firstAttribute="height" constant="50" id="ckR-Ot-fV5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Jonny B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2u-2S-JVC">
+                                                    <rect key="frame" x="80" y="11" width="62" height="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiu-wd-LM6">
+                                                    <rect key="frame" x="80" y="46" width="265" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYc-Jw-gVl">
+                                                    <rect key="frame" x="157" y="13" width="35" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yiu-wd-LM6" firstAttribute="top" secondItem="j2u-2S-JVC" secondAttribute="bottom" constant="15" id="30j-qy-U02"/>
+                                                <constraint firstItem="fu5-k6-g2A" firstAttribute="leading" secondItem="zBe-LX-1JW" secondAttribute="leadingMargin" id="6fV-73-ESQ"/>
+                                                <constraint firstItem="fu5-k6-g2A" firstAttribute="top" secondItem="zBe-LX-1JW" secondAttribute="topMargin" id="Dea-Bu-A9F"/>
+                                                <constraint firstItem="j2u-2S-JVC" firstAttribute="leading" secondItem="fu5-k6-g2A" secondAttribute="trailing" constant="15" id="FMt-9E-75h"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yiu-wd-LM6" secondAttribute="bottom" constant="15" id="IJY-oV-0h3"/>
+                                                <constraint firstItem="yiu-wd-LM6" firstAttribute="leading" secondItem="fu5-k6-g2A" secondAttribute="trailing" constant="15" id="JvR-3i-m67"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pYc-Jw-gVl" secondAttribute="trailing" symbolic="YES" id="YfL-JN-RiU"/>
+                                                <constraint firstItem="j2u-2S-JVC" firstAttribute="top" secondItem="fu5-k6-g2A" secondAttribute="top" id="ZP7-6R-L57"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yiu-wd-LM6" secondAttribute="trailing" constant="15" id="hnS-a6-fMf"/>
+                                                <constraint firstItem="pYc-Jw-gVl" firstAttribute="leading" secondItem="j2u-2S-JVC" secondAttribute="trailing" constant="15" id="hx7-oI-opq"/>
+                                                <constraint firstItem="pYc-Jw-gVl" firstAttribute="centerY" secondItem="j2u-2S-JVC" secondAttribute="centerY" id="poD-tg-WUd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageBodyLbl" destination="yiu-wd-LM6" id="gy1-7F-g9t"/>
+                                            <outlet property="timeStamp" destination="pYc-Jw-gVl" id="olO-6P-5bB"/>
+                                            <outlet property="userNameLbl" destination="j2u-2S-JVC" id="bMy-24-PJB"/>
+                                            <outlet property="userimg" destination="fu5-k6-g2A" id="1TZ-Jd-tXz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NZ4-oX-tbb" firstAttribute="trailing" secondItem="C56-5i-Cik" secondAttribute="trailing" id="3R7-1a-U7W"/>
+                            <constraint firstItem="C56-5i-Cik" firstAttribute="leading" secondItem="NZ4-oX-tbb" secondAttribute="leading" id="5A8-Wj-uYQ"/>
+                            <constraint firstItem="NZ4-oX-tbb" firstAttribute="trailing" secondItem="O6p-hL-0Fd" secondAttribute="trailing" constant="8" id="5cS-5v-ntR"/>
                             <constraint firstItem="9Om-6O-Cda" firstAttribute="top" secondItem="hhO-Xl-W6K" secondAttribute="top" id="70m-gC-xzm"/>
                             <constraint firstItem="9Om-6O-Cda" firstAttribute="trailing" secondItem="NZ4-oX-tbb" secondAttribute="trailing" id="7ed-EF-A4y"/>
+                            <constraint firstItem="OBw-tI-XAi" firstAttribute="leading" secondItem="NZ4-oX-tbb" secondAttribute="leading" id="F07-zM-Qlg"/>
+                            <constraint firstItem="OBw-tI-XAi" firstAttribute="bottom" secondItem="NZ4-oX-tbb" secondAttribute="bottom" id="ME8-E7-NMR"/>
+                            <constraint firstItem="O6p-hL-0Fd" firstAttribute="centerY" secondItem="OBw-tI-XAi" secondAttribute="centerY" id="PMe-jZ-yv8"/>
+                            <constraint firstItem="NZ4-oX-tbb" firstAttribute="trailing" secondItem="OBw-tI-XAi" secondAttribute="trailing" id="R44-dQ-q4f"/>
+                            <constraint firstItem="OBw-tI-XAi" firstAttribute="top" secondItem="C56-5i-Cik" secondAttribute="bottom" constant="30" id="RCr-s6-6rC"/>
+                            <constraint firstItem="C56-5i-Cik" firstAttribute="top" secondItem="9Om-6O-Cda" secondAttribute="bottom" id="VqZ-qk-E9Q"/>
                             <constraint firstItem="9Om-6O-Cda" firstAttribute="leading" secondItem="NZ4-oX-tbb" secondAttribute="leading" id="msk-b0-jCI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NZ4-oX-tbb"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLbl" destination="Vzz-vf-IG6" id="3mu-nR-DHH"/>
                         <outlet property="menuBtn" destination="Y3B-jO-fKP" id="lUz-pu-wRV"/>
+                        <outlet property="messageSendBtnClicked" destination="PMe-jZ-yv8" id="jg8-0S-Tjs"/>
+                        <outlet property="messageTxtFld" destination="OBw-tI-XAi" id="tZW-8j-j7h"/>
+                        <outlet property="sendBtn" destination="O6p-hL-0Fd" id="MGc-7Y-Ir8"/>
+                        <outlet property="tableView" destination="C56-5i-Cik" id="Olw-dz-UdT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LK-jk-hZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,6 +682,7 @@
         <image name="closeButton" width="28" height="28"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>
